@@ -23,5 +23,8 @@ LEDS using DATA and CLOCK pins (partial list)
     DOTSTAR  
     APA102  
     SK9822  
+MAYBE
+    WS2811
+    WS2815
 
     ANy other dual pin LED supportyed by FastLED
