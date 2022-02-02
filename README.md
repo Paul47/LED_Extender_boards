@@ -1,6 +1,6 @@
-#LED Extender boards
+# LED Extender boards
 
-Dr Oldies LED Extender small, inexpensive expansion boards support up to 16 leds strips in either simple strips or tiled arrays.
+** Dr Oldies LED Extender small, inexpensive expansion boards support up to 16 leds strips in either simple strips or tiled arrays. **
 
 * LED Extender PCBs can be used independently or, more conventienly, with my LEDMatrix_22/FastLED library. 
 * Combining the Extenders with these libraries allows you to design medium to large led strings and arrays of 4096 leds and more.
