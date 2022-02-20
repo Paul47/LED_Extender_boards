@@ -87,9 +87,15 @@ Connector: 2x8 pins on top, 2x10 on bottom.
 ## Wiring Recommenations
 
 * while some leds can be driven with 3.3v directly from the MCU, 5v is highly recommended.
-The volyage drop along a string can drop the voltage well below the 3v3 level causing breakup.
-* 1.0 uf
-* 0.1uf
-* 22, 20 awg jumper wiring. even heavier for 5v and ground
-* Voltage injection
-
+The voltage drop along a string can drop the voltage well below the 3v3 level causing breakup.
+* Voltage injection is adding additional power along the led string. This can be at the end
+of each strip, or anywhere along the strip.With tiled led blocks, I add power to each tile.
+* 1.0uf, 16v or 24v - You sould use this on each power line across Vdd and GND, as close to the
+first led in the string as possible. If using power injection, a cap shoul be across every line.
+* 0.1uf,16v \ - Some led strips and tiles have o.1uf capacitors across Vdd and GND at each led. I
+have not found this necessary using a good power supply, heavy wire (22 awg or lower gauge).
+* 22, 20 awg jumper wiring. even heavier for 5v and ground. Most jumper wires (those ribbons yop
+pull strips off of) are 24 or even 26 awg. These are too thin for led arrays, especially if
+the are more then 15cm long. 
+* Brightness can be a problem with many leds that can affect your eyes. Keep the brightness low
+and add a paper filter or fronsted plastic panel - even when just testing your project.
