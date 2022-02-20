@@ -1,0 +1,95 @@
+
+## Which MCU should you use?
+
+Driving large led arrays or long strips requires a lot of on-board memory and processing speed.
+8-bit MCUs like the UNO will propably not work well if at all. 32 bit MCUs are preferred.
+
+Tested MCUs
+Teensy 3.5, 3.5, 4.0 qnd 4.1
+ESP32
+Adafruit Matrix Portal M4 (see pin details below)
+STM32
+
+See the wiring recommenations below for starting
+
+## Teensy 3.5 to 4.1 
+
+============ To properly function with the Teensy you MUST define the follwoing ==================
+#define FASTLED_TEENSY3 //no teensy4 enabled for DATA_RATE_MHZ()
+   or
+#define FASTLED_TEENSY4 //defined for DATA_RATE_MHZ() and FAST_SPI in fastSPI_ARM_MXRT1062.h
+
+### Teensy SPI pins for 2-wire leds
+
+Any Teensy ouput pins should work for driving led strips or array panels. Even the 2-wire
+DATA+CLOCK can be any pair of pins, since the led clock is not related to the MCU clock. 
+
+Teensy 4.1 hardware SPI - this MCU has 2 sets of SPI ports.
+These may deliver faster display rates.
+         Teensy SPI pin
+DATA_1   11
+CLOCK_1  13
+DATA_2   26
+CLOCK_2  27
+  
+If you are NOT using the LEDS Extender Shields, but want to use up to 4 separate led strips, 
+set HAS_EXTENDER (below) to true, set the Banks = 1, and the NUM_STRIPS to your strips (1 to 4). 
+Be sure to assign the DATA or DATA/CLOCK  pins correctly. 
+
+### Teensy SPI pins for 1-wire leds
+
+For 1-wire led strips Teensy boards limit the useable pins. 
+For 1-wire leds, it appears that only some Teensy pins will work as DATA lines.
+Usable pins: 
+Teensy LC:   1, 4, 5, 24 
+Teensy 3.2:  1, 5, 8, 10, 31   (overclock to 120 MHz for pin 8) 
+Teensy 3.5:  1, 5, 8, 10, 26, 32, 33, 48 
+Teensy 3.6:  1, 5, 8, 10, 26, 32, 33 
+Teensy 4.0:  1, 8, 14, 17, 20, 24, 29, 39
+Teensy 4.1:  1, 8, 14, 17, 20, 24, 29, 35, 47, 53
+
+More details are here: https://github.com/PaulStoffregen/WS2812Serial
+
+## Dr. Oldies LED Extender shield and boards. 
+
+For 2-wire leds, select your DATA/CLOCK pins
+If using the Extender shield pin selections are limited to these:
+         Teensy pin
+DATA_1   1    or    14**
+CLOCK_1  2    or    15**
+DATA_2   3    or    16**
+CLOCK_2  4    or    17**
+**If Teensy is rotated 180 deg on the Extender board
+
+
+## Adafruit MatrixPortal M4
+
+This portal MCU board was designed for HUB75 led panels but can be used for 
+1-wire and 2-wire led strips and panels as well. Here is the output pin
+number for the board's connector.
+
+Insert jumpers in the top 2x8 side of the connector, or the 2x10 bottom side.
+Be sure to skip the left and right most pins on the bootom side of the connector.
+
+ Adafruit MatrixPortal M4 (top view)
+Connector: 2x8 pins on top, 2x10 on bottom.
+ |     -------------------------   |
+ |     |16|14|19|17|12|10| 9| 7|   |
+ |     |------------------------   |
+ |     |x |15|20|18|x |11|x |x |   |
+ |     -------------------------   |
+ | O <----------GND*---------->  O |
+ \________________________________/
+
+ *Be sure to connect GND & LED 
+  to a common ground.
+
+## Wiring Recommenations
+
+* while some leds can be driven with 3.3v directly from the MCU, 5v is highly recommended.
+The volyage drop along a string can drop the voltage well below the 3v3 level causing breakup.
+* 1.0 uf
+* 0.1uf
+* 22, 20 awg jumper wiring. even heavier for 5v and ground
+* Voltage injection
+

@@ -1,8 +1,10 @@
 # LED Extender boards
 
-** Dr Oldies LED Extender small, inexpensive expansion boards support up to 16 leds strips in either simple strips or tiled arrays. **
+**Dr Oldies LED Extender Teensy shields and non-shields are small, inexpensive expansion boards which support up to 16 leds strips in either simple strips or tiled arrays**
 
-* LED Extender PCBs can be used independently or, more conventienly, with my LEDMatrix_22/FastLED library. 
+**Schematics, Gerbers, BOM and Pick List files are included**
+
+* LED Extender PCBs can be used independently or, more conveniently, with my LEDMatrix_22/FastLED library. 
 * Combining the Extenders with these libraries allows you to design medium to large led strings and arrays of 4096 leds and more.
 * Large led panels can be composed of multiple led tiles in numerous arrangements. 
 * Versions support both 1-wire and 2-wire leds (see below).
@@ -10,20 +12,22 @@
 * The LEDMatrix_22 library is configured in a well documented header file. 
 * 3v3 data lines are converted to 5v while isolating the MCU from led voltages.
 * See the Wiki above for complete details
+* All gerber, BOM, and Pick Lists files are included.
+* Includes DipTrace schematic and board files. (DipTrace is free to download for smaller PCBs)
 
 ## The Problem
-Both 1-wire (data only) and 2-wire (data+clock) led strips longer than a few dozens of leds fall out of sync and begin to "pixilate" or flash randomly. Using voltage steppers can help to some extent. ing can help aEven when injecting additional current to increase brightness of leds, out of sync timing still occurs.
-Breaking into shorter led strips running in parallel from the MCU required complicated code, and uses a large number of MCU pins.  
+Both 1-wire (data only) and 2-wire (data + clock) led strips longer than a few dozens of leds fall out of sync and begin to "pixilate" or flash randomly. Using voltage steppers to ensure full 5v signals and even injecting additional current to sustain brightness of leds can help to some extent. But out of sync timing still occurs.
+Breaking led strips into shorter led strips running in parallel from the MCU required complicated code, and uses a large number of MCU pins.  
  
 ## The Solution 
-These LED Extenders alow you to break-up the strings into shorter strips running in parallel by multiplexing MCU a minimum of output pins to a lage number of strips. 
+These LED Extenders allow you to break-up the strings into shorter strips running in parallel by multiplexing MCU a minimum of output pins to a large number of strips. 
 
 1. Teensy 3.5 to 4.1 **shield format** 
     Plug directly in Teensy either above or below
     1 to 4 extenders can be added ("long leg" female headers required)
 2. non-shield format
-    32 bit MCU recommended for larger LED matricies
-    Sufficient memory to accomodate the CRGB LED array
+    32 bit MCU recommended for larger LED matrices
+    Sufficient memory to accommodate the CRGB LED array
     Requires jumper wires or ribbon cable-not supplied 
 
 
@@ -48,4 +52,4 @@ LEDS (1-wire) using DATA only pin (partial list)
     WS2812B
     WS2815
 
-ANy other dual pin LED supportyed by FastLED
+Any other dual pin LED supported by FastLED
