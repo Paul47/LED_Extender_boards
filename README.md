@@ -1,15 +1,17 @@
 # LED Extender boards
 
-**Dr Oldies LED Extender Teensy shields and non-shields are small, inexpensive expansion boards which support up to 16 leds strips in either simple strips or tiled arrays**
+**These LED Extender Teensy shields and non-shields are small, inexpensive expansion boards which support up to 16 leds strips in either simple strips or tiled arrays**
 
 **Schematics, Gerbers, BOM and Pick List files are included**
 
-* LED Extender PCBs can be used independently or, more conveniently, with my LEDMatrix_22/FastLED library. 
+**See the wiki for detailed descriptions of each board version.**
+
+* LED Extender PCBs can be used independently or, more conveniently, with my LEDMatrix_22/FastLED library (https://github.com/Paul47/LEDMatrix_22). 
 * Combining the Extenders with these libraries allows you to design medium to large led strings and arrays of 4096 leds and more.
 * Large led panels can be composed of multiple led tiles in numerous arrangements. 
 * Versions support both 1-wire and 2-wire leds (see below).
 * Using a multiplexing schema large 2-wire arrays use 8 MCU pins or less! Leaving lots of pins for sound and other uses.
-* The LEDMatrix_22 library is configured in a well documented header file. 
+* My LEDMatrix_22 library (https://github.com/Paul47/LEDMatrix_22) is configured in a well documented header file. 
 * 3v3 data lines are converted to 5v while isolating the MCU from led voltages.
 * See the Wiki above for complete details
 * All gerber, BOM, and Pick Lists files are included.
