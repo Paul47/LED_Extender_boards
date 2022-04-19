@@ -36,7 +36,7 @@ These LED Extenders allow you to break-up the strings into shorter strips runnin
 ### supported led strips (as strips or matrix/array panels)
 
 LEDS (2-wire) using DATA and CLOCK pins (partial list)
-'''c
+```c
     LPD6803 
     LPD8806 
     WS2801
@@ -46,14 +46,14 @@ LEDS (2-wire) using DATA and CLOCK pins (partial list)
     DOTSTAR  
     APA102  
     SK9822
-'''
+```
 LEDS (1-wire) using DATA only pin (partial list)
-'''c
+```c
     TX1813N1
     TX1812
     WS2811
     WS2812
     WS2812B
     WS2815
-'''
+```
 Any other 1-wire or 2-wire leds supported by FastLED
