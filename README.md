@@ -2,6 +2,8 @@
 
 **These LED Extender Teensy shields and non-shields are small, inexpensive expansion boards which support up to 16 leds strips in either simple strips or tiled arrays**
 
+<img src="https://github.com/Paul47/LEDMatrix_22/blob/main/wiki_images/image_7.png" width = "300" align = "RIGHT">
+
 **Schematics, Gerbers, BOM and Pick List files are included**
 
 **See the wiki for detailed descriptions of each board version.**
